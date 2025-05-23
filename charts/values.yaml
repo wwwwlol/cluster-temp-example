@@ -1,0 +1,45 @@
+# cluster specific values
+cluster:
+  # specify cluster name
+  name: rke2-001
+
+  # specify cluster labels
+  labels: {}
+
+  # specify cluster annotations
+  annotations: {}
+
+# specify cloud credential secret name, do not need to be provided if using custom driver
+cloudCredentialSecretName: ""
+
+# specify cloud provider, options are amazonec2, digitalocean, azure, vsphere or custom
+cloudprovider: "amazonec2"
+
+agentEnvs: 
+       HTTP_PROXY: test
+
+kubernetesVersion: "v1.27.16+rke2r2"
+
+# general RKE options
+rke:
+  # enable local auth endpoint
+  localClusterAuthEndpoint:
+    enabled: true
+  # specify fqdn of local access endpoint
+  # fqdn: foo.bar.example
+  # specify cacert of local access endpoint
+  # caCerts: ""
+
+# specify user principal ids to be assiged as cluster members
+# clusterMembers:
+# - principalName: "local://u-z8zl5"
+#   roleTemplateName: "cluster-member"
+
+# enable monitoring
+monitoring:
+  enabled: false
+  # specify which version to install, can be semver range. If version is empty or is semver range, it will pick up the latest version.
+  # version: ""
+  # specify cutsom values set
+  # values:
+  #   foo: bar
